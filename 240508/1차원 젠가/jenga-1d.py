@@ -6,11 +6,8 @@ jenga = [int(input()) for _ in range(n)]
 s1, e1 = list(map(int, input().split()))
 s2, e2 = list(map(int, input().split()))
 
-del jenga[-e1-1:-s1]
-if len(jenga) > 1:
-    del jenga[-e2-1:-s2]
-else:
-    del jenga[0]
+del jenga[s1-1:e1]
+del jenga[s2-1:e2]
 
 print(len(jenga))
 for v in jenga:
