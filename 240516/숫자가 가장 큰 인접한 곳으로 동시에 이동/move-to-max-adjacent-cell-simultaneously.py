@@ -24,12 +24,13 @@ def move(r, c):
             if max_num < num:
                 max_num = num
                 max_nums.append([num, r+dy[i], c+dx[i]])
-    num, r, c = max(max_nums)
+    if max_nums:
+        num, r, c = max(max_nums)
     return r, c
 
 for _ in range(t):
     for i, bead in enumerate(beads):
         bead = move(bead[0], bead[1])
         beads[i] = bead
-    beads = set(beads)
+    beads = list(set(beads))
 print(len(beads))
